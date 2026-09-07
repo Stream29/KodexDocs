@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kodex Docs — Quickstart</title>
+  <meta name="description" content="Kodex quickstart: installation, sign-in, sessions, settings, and troubleshooting.">
+  <meta name="theme-color" content="#101617">
+  <link rel="canonical" href="https://stream29.github.io/KodexDocs/">
+  <link rel="alternate" hreflang="en-US" href="https://stream29.github.io/KodexDocs/">
+  <link rel="alternate" hreflang="zh-CN" href="https://stream29.github.io/KodexDocs/zh-CN/">
+  <link rel="alternate" hreflang="zh-TW" href="https://stream29.github.io/KodexDocs/zh-TW/">
+  <link rel="alternate" hreflang="x-default" href="https://stream29.github.io/KodexDocs/">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./app.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="topbar">
+    <a class="brand" href="./"><span aria-hidden="true">&gt;_</span> Kodex Docs</a>
+    <nav class="languages" aria-label="Language">
+      <a class="language" href="./" lang="en-US" hreflang="en-US" aria-current="true">English</a>
+      <a class="language" href="./zh-CN/" lang="zh-CN" hreflang="zh-CN">简体中文</a>
+      <a class="language" href="./zh-TW/" lang="zh-TW" hreflang="zh-TW">繁體中文</a>
+    </nav>
+  </header>
+  <div class="workspace">
+    <aside class="sidebar">
+      <nav class="contents" aria-label="Navigation">
+        <a href="#installation">Installation</a>
+        <a href="#first-session">First session</a>
+        <a href="#sessions">Sessions &amp; history</a>
+        <a href="#settings">Settings &amp; tools</a>
+        <a href="#troubleshooting">Troubleshooting</a>
+      </nav>
+      <nav class="resources" aria-label="Source">
+        <a href="https://github.com/Stream29/Kodex/releases">Releases ↗</a>
+        <a href="https://github.com/Stream29/Kodex">Source ↗</a>
+        <a href="./en-US.md">Markdown source ↗</a>
+        <a href="https://github.com/Stream29/KodexDocs/edit/main/src/en-US.md">Edit ↗</a>
+      </nav>
+    </aside>
+    <main id="main" tabindex="-1">
+      <h1 class="sr-only">Kodex / Quickstart</h1>
+      <pre class="markdown"># Kodex / Quickstart
+
+Kodex is a Kotlin Multiplatform implementation for Codex.
+This guide covers the native CLI release v0.4.3.
+
+</pre>
+      <section id="installation" aria-label="Installation"><pre class="markdown">## Installation
+
+Download the archive matching your OS and CPU:
+
+- macOS Apple Silicon: kodex-0.4.3-macos-arm64.tar.gz
+- Linux x64: kodex-0.4.3-linux-x64.tar.gz
+- Linux ARM64: kodex-0.4.3-linux-arm64.tar.gz
+- Windows x64: kodex-0.4.3-windows-x64.zip
+
+Downloads:
+https://github.com/Stream29/Kodex/releases/tag/v0.4.3
+
+No JVM is needed for these native releases. There is no Intel macOS archive in this release.
+
+Before running, compare the archive&#39;s SHA-256 with the matching filename in kodex-0.4.3-SHA256SUMS.txt, available in the same release.
+Use `shasum -a 256` on macOS, `sha256sum` on Linux, or `Get-FileHash -Algorithm SHA256` on Windows.
+
+macOS / Linux — run in the download folder.
+This example is for Linux x64; substitute your archive name for macOS or ARM64:
+
+```sh
+tar -xzf kodex-0.4.3-linux-x64.tar.gz
+chmod +x kodex
+./kodex
+```
+
+Windows / PowerShell — run in the download folder:
+
+```powershell
+Expand-Archive -Path .\kodex-0.4.3-windows-x64.zip -DestinationPath .\kodex
+.\kodex\kodex.exe
+```
+
+Optional: put the executable in a directory on PATH to run `kodex` from your project folder. Otherwise use its full path.
+
+</pre></section>
+      <section id="first-session" aria-label="First session"><pre class="markdown">## First session
+
+1. Run the extracted executable in an interactive terminal.
+2. Open Settings → OpenAI. Set Authentication to Kodex, then choose Sign in under Browser sign-in.
+   Alternatively select Codex to use credentials managed by Codex CLI, then Reload.
+3. Use + to open a new session. Confirm its working directory points to your project.
+4. Choose an available model, reasoning effort, and service tier.
+5. Send a small task using the composer&#39;s displayed submit shortcut. Newline behavior is configurable.
+
+Try a read-only request first:
+
+```text
+Read the project instructions and explain the directory structure.
+Do not modify any files. Suggest one small next step.
+```
+
+Kodex can run commands and edit files. Work in a trusted project, keep a backup or a clean Git baseline, and review changes and test results.
+A prompt is guidance, not a security sandbox. Never paste credentials into a conversation.
+
+</pre></section>
+      <section id="sessions" aria-label="Sessions &amp; history"><pre class="markdown">## Sessions &amp; history
+
+- Sessions: reopen saved conversations.
+- +: start another session.
+- Close: close a tab, rather than delete its saved session.
+- Fork: start a separate conversation from existing history.
+- Archive: put completed work aside. Show archived makes it visible again.
+- Delete: remove a session after confirmation.
+
+Inspect history and tool details before branching or reverting conversation state.
+Conversation operations do not replace Git or file backups.
+
+</pre></section>
+      <section id="settings" aria-label="Settings &amp; tools"><pre class="markdown">## Settings &amp; tools
+
+- OpenAI: manage authentication and view account usage. Available models depend on your account.
+- Context sources: configure project-instruction and skill sources. Use AGENTS.md for project guidance and SKILL.md for a skill.
+- MCP: add trusted servers or use Import from Codex. Check connection and authentication status before use.
+- Hooks: configure custom automation only when needed. Review commands before enabling them.
+
+MCP tools can access external systems. Hooks execute on your machine.
+Check configured sources rather than assuming every agent shares the same Home.
+
+</pre></section>
+      <section id="troubleshooting" aria-label="Troubleshooting"><pre class="markdown">## Troubleshooting
+
+- Command not found:
+  Run `./kodex` from the extracted directory on macOS/Linux, or `.\kodex.exe` on Windows. For a global command, add its directory to PATH.
+- macOS blocks startup:
+  Verify the download source and checksum, then follow the system security prompts. Do not disable system-wide protections.
+- Sign-in does not finish:
+  Read the login dialog; use its URL if the browser did not open. Check network access and retry. Do not share callback URLs or tokens.
+- Model request fails:
+  Check authentication, the selected model, account usage, and network access. Read the visible error before retrying.
+- Data location:
+  Kodex Home is `~/.kodex`, under your user home on Windows too. Back it up before migration or manual edits. It can contain credentials and private conversations; never upload the entire directory.
+
+Report a problem with your version, OS, terminal, reproduction steps, and a redacted error:
+https://github.com/Stream29/Kodex/issues
+</pre></section>
+    </main>
+  </div>
+</body>
+</html>
