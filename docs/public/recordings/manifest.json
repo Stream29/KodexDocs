@@ -1,0 +1,262 @@
+{
+  "sourceRevision": "89205188d5da39f36b983a0bfb57752977feb21a",
+  "release": false,
+  "productionChange": {
+    "file": "Kodex/app/view/application/src/mosaicMain/kotlin/io/github/stream29/kodex/cli/app/SessionTreeCliScreen.kt",
+    "sha256": "fc005d7bed2669934b03f01b12e7eab66de3cd6ca1f38708d418cce04e066790",
+    "description": "AgentHistoryRevertDialog visibility private -> internal for direct component tests; behavior unchanged"
+  },
+  "recordings": {
+    "workspace": {
+      "kind": "native-cli",
+      "castSha256": "0b68b74b1acdb88c004a52693c72d37f63a77b435edf8e47a671737768bae5a3",
+      "format": 3,
+      "size": [
+        120,
+        36
+      ],
+      "durationSeconds": 18.237,
+      "timing": "PTY wall-clock",
+      "generator": "KodexDocs/scripts/record-native.py",
+      "generatorSha256": "111ebb94664dfb4edf0437e8264800926e6630b5bf6a90f3e35759898a07bcea",
+      "inputCaptured": false,
+      "originalHomeMounted": false,
+      "modelCalled": false,
+      "cliSha256": "99882904ad4d20eb65e00dffd983b77aec4893ef3ca4bdfcdb8684a6f4800af3",
+      "asciinemaSha256": "bec9781bc8f297a9d3d74ff60205599507f2abba1183578b8b2f22be4c999214",
+      "networkIsolated": true
+    },
+    "input": {
+      "kind": "native-cli",
+      "castSha256": "4bfa6f485c59f7e1d49036ec88f6b0b8aaf0f82d3aa431f3b944c66fd436497c",
+      "format": 3,
+      "size": [
+        120,
+        36
+      ],
+      "durationSeconds": 18.962,
+      "timing": "PTY wall-clock",
+      "generator": "KodexDocs/scripts/record-native.py",
+      "generatorSha256": "111ebb94664dfb4edf0437e8264800926e6630b5bf6a90f3e35759898a07bcea",
+      "inputCaptured": false,
+      "originalHomeMounted": false,
+      "modelCalled": false,
+      "cliSha256": "99882904ad4d20eb65e00dffd983b77aec4893ef3ca4bdfcdb8684a6f4800af3",
+      "asciinemaSha256": "bec9781bc8f297a9d3d74ff60205599507f2abba1183578b8b2f22be4c999214",
+      "networkIsolated": true
+    },
+    "configuration": {
+      "kind": "native-cli",
+      "castSha256": "72d359b540dc53a93479697216e08ad04c54b50329d3dc4272ff44d288be326e",
+      "format": 3,
+      "size": [
+        120,
+        36
+      ],
+      "durationSeconds": 21.153,
+      "timing": "PTY wall-clock",
+      "generator": "KodexDocs/scripts/record-native.py",
+      "generatorSha256": "111ebb94664dfb4edf0437e8264800926e6630b5bf6a90f3e35759898a07bcea",
+      "inputCaptured": false,
+      "originalHomeMounted": false,
+      "modelCalled": false,
+      "cliSha256": "99882904ad4d20eb65e00dffd983b77aec4893ef3ca4bdfcdb8684a6f4800af3",
+      "asciinemaSha256": "bec9781bc8f297a9d3d74ff60205599507f2abba1183578b8b2f22be4c999214",
+      "networkIsolated": true
+    },
+    "execution": {
+      "kind": "native-cli",
+      "castSha256": "9213d36f8e3f04323850bbfde5f6b02b31101ef879f433175a3cc991ebc89dc1",
+      "format": 3,
+      "size": [
+        120,
+        36
+      ],
+      "durationSeconds": 434.151,
+      "timing": "PTY wall-clock",
+      "generator": "KodexDocs/scripts/record-live.py",
+      "generatorSha256": "4f64902b7dac4f67c9f18a70e1375c14ea76363399786588924c89f8c5cccc97",
+      "inputCaptured": false,
+      "originalHomeMounted": false,
+      "modelCalled": true,
+      "cliSha256": "99882904ad4d20eb65e00dffd983b77aec4893ef3ca4bdfcdb8684a6f4800af3",
+      "asciinemaSha256": "bec9781bc8f297a9d3d74ff60205599507f2abba1183578b8b2f22be4c999214",
+      "networkIsolated": false,
+      "translatedHistory": {
+        "file": "Kodex/app/view/application/src/jvmTest/resources/docs/history-index.en.json",
+        "sha256": "e84ca6c7c70db12cfbcc529eef8a07de07343b4884e77e1ecff8a415fb6d9c11",
+        "description": "User-authorized English translation of a local Kodex feature discussion excerpt; original session unchanged"
+      },
+      "credentialAccess": "read-only authentication file bind; credentials excluded from recordings",
+      "originalSessionOpened": false
+    },
+    "questions": {
+      "kind": "production-components-offline-fixture",
+      "castSha256": "a630d0fa790d375500ccbe61756890f3f698de65e386d8e65fcd56b9643f8817",
+      "format": 2,
+      "size": [
+        80,
+        18
+      ],
+      "durationSeconds": 14.0,
+      "timing": "editorial: two seconds per asserted frame",
+      "generator": "Kodex/app/view/application/src/jvmTest/kotlin/io/github/stream29/kodex/cli/app/DocsRecordingTest.kt",
+      "generatorSha256": "21f519253febec485349b467133037a2fa864b5436ccd1dfa674139112ec72ad",
+      "inputCaptured": false,
+      "originalHomeMounted": false,
+      "modelCalled": false,
+      "sharedExporterSha256": "21f519253febec485349b467133037a2fa864b5436ccd1dfa674139112ec72ad"
+    },
+    "suggestions": {
+      "kind": "production-components-offline-fixture",
+      "castSha256": "389ad103f9bb041891414bd99be1449dd0827d047bf1664f45ba05baa0873a6e",
+      "format": 2,
+      "size": [
+        80,
+        18
+      ],
+      "durationSeconds": 18.0,
+      "timing": "editorial: two seconds per asserted frame",
+      "generator": "Kodex/app/view/application/src/jvmTest/kotlin/io/github/stream29/kodex/cli/app/DocsRecordingTest.kt",
+      "generatorSha256": "21f519253febec485349b467133037a2fa864b5436ccd1dfa674139112ec72ad",
+      "inputCaptured": false,
+      "originalHomeMounted": false,
+      "modelCalled": false,
+      "sharedExporterSha256": "21f519253febec485349b467133037a2fa864b5436ccd1dfa674139112ec72ad"
+    },
+    "results-history": {
+      "kind": "native-cli",
+      "castSha256": "ec00d51873f7c2cb19d3abc82e110f8e74d39eb3e7ae84100e2df6f13b859bd5",
+      "format": 3,
+      "size": [
+        120,
+        36
+      ],
+      "durationSeconds": 723.612,
+      "timing": "PTY wall-clock",
+      "generator": "KodexDocs/scripts/record-live.py",
+      "generatorSha256": "4f64902b7dac4f67c9f18a70e1375c14ea76363399786588924c89f8c5cccc97",
+      "inputCaptured": false,
+      "originalHomeMounted": false,
+      "modelCalled": false,
+      "cliSha256": "99882904ad4d20eb65e00dffd983b77aec4893ef3ca4bdfcdb8684a6f4800af3",
+      "asciinemaSha256": "bec9781bc8f297a9d3d74ff60205599507f2abba1183578b8b2f22be4c999214",
+      "networkIsolated": false,
+      "translatedHistory": {
+        "file": "Kodex/app/view/application/src/jvmTest/resources/docs/history-index.en.json",
+        "sha256": "e84ca6c7c70db12cfbcc529eef8a07de07343b4884e77e1ecff8a415fb6d9c11",
+        "description": "User-authorized English translation of a local Kodex feature discussion excerpt; original session unchanged"
+      },
+      "credentialAccess": "read-only authentication file bind; credentials excluded from recordings",
+      "originalSessionOpened": false,
+      "controllerSha256": "580a1e35657a61b50b7594abdf35caf8a5fa4aa10cdfd8c8e54d817dff87bc2c"
+    },
+    "history-index": {
+      "kind": "native-cli",
+      "castSha256": "8bd2b8887d6d36ee163b8d459fedda06cb4c9053ebad9de98d4dfdba20092bdb",
+      "format": 3,
+      "size": [
+        120,
+        36
+      ],
+      "durationSeconds": 111.419,
+      "timing": "PTY wall-clock",
+      "generator": "KodexDocs/scripts/record-live.py",
+      "generatorSha256": "4f64902b7dac4f67c9f18a70e1375c14ea76363399786588924c89f8c5cccc97",
+      "inputCaptured": false,
+      "originalHomeMounted": false,
+      "modelCalled": false,
+      "cliSha256": "99882904ad4d20eb65e00dffd983b77aec4893ef3ca4bdfcdb8684a6f4800af3",
+      "asciinemaSha256": "bec9781bc8f297a9d3d74ff60205599507f2abba1183578b8b2f22be4c999214",
+      "networkIsolated": false,
+      "translatedHistory": {
+        "file": "Kodex/app/view/application/src/jvmTest/resources/docs/history-index.en.json",
+        "sha256": "e84ca6c7c70db12cfbcc529eef8a07de07343b4884e77e1ecff8a415fb6d9c11",
+        "description": "User-authorized English translation of a local Kodex feature discussion excerpt; original session unchanged"
+      },
+      "credentialAccess": "read-only authentication file bind; credentials excluded from recordings",
+      "originalSessionOpened": false,
+      "controllerSha256": "7e25e81e4115d70ef24d7c43ce43609b92dab02ba9d4fe7312fe44115d53fc79"
+    },
+    "terminal-sessions": {
+      "kind": "production-components-offline-fixture",
+      "castSha256": "8b9bc0861e1bd4e1c39c0edc8e267aee711253cab8775fee98733b00357d855a",
+      "format": 2,
+      "size": [
+        80,
+        18
+      ],
+      "durationSeconds": 8.0,
+      "timing": "editorial: two seconds per asserted frame",
+      "generator": "Kodex/app/view/application/src/jvmTest/kotlin/io/github/stream29/kodex/cli/app/DocsWorkspaceRecordingTest.kt",
+      "generatorSha256": "f3ccaeb7cf4247eb9729ae8ac2fd11c9b446106304462192e4d99b603934d7d9",
+      "inputCaptured": false,
+      "originalHomeMounted": false,
+      "modelCalled": false,
+      "sharedExporterSha256": "21f519253febec485349b467133037a2fa864b5436ccd1dfa674139112ec72ad"
+    },
+    "session-tabs": {
+      "kind": "production-components-offline-fixture",
+      "castSha256": "0f8ffff12a523e229b79c9a46ade98fbbd27681d1e7b1b4647157fb8e045a8c0",
+      "format": 2,
+      "size": [
+        80,
+        18
+      ],
+      "durationSeconds": 8.0,
+      "timing": "editorial: two seconds per asserted frame",
+      "generator": "Kodex/app/view/application/src/jvmTest/kotlin/io/github/stream29/kodex/cli/app/DocsWorkspaceRecordingTest.kt",
+      "generatorSha256": "f3ccaeb7cf4247eb9729ae8ac2fd11c9b446106304462192e4d99b603934d7d9",
+      "inputCaptured": false,
+      "originalHomeMounted": false,
+      "modelCalled": false,
+      "sharedExporterSha256": "21f519253febec485349b467133037a2fa864b5436ccd1dfa674139112ec72ad"
+    },
+    "hooks": {
+      "kind": "native-cli",
+      "castSha256": "8e1ad6e20f75fd89671279d13dbeb270a6532a39d2ac03a3631c6df8af18a370",
+      "format": 3,
+      "size": [
+        120,
+        36
+      ],
+      "durationSeconds": 44.935,
+      "timing": "PTY wall-clock",
+      "generator": "KodexDocs/scripts/record-integrations.py",
+      "generatorSha256": "f82a108d41633a8937ae845c4e162299b782474d589c140d171d297e3443b091",
+      "inputCaptured": false,
+      "originalHomeMounted": false,
+      "modelCalled": false,
+      "cliSha256": "99882904ad4d20eb65e00dffd983b77aec4893ef3ca4bdfcdb8684a6f4800af3",
+      "asciinemaSha256": "bec9781bc8f297a9d3d74ff60205599507f2abba1183578b8b2f22be4c999214",
+      "networkIsolated": true,
+      "demoFixture": "Disposable Codex configuration and local MCP server; no personal credentials",
+      "fixtureSha256": "5b616c2283c1b8ca0d4e57ef7c81e0a0fc686bc7ca0e9cd8b2058cdca873830d",
+      "actionsSha256": "d5c48d7c3478f1580fafa44d48c10c60f4f48238e68967bcca9e93415336698f",
+      "actions": "KodexDocs/scripts/fixtures/hooks-actions.json"
+    },
+    "mcp": {
+      "kind": "native-cli",
+      "castSha256": "13527260e26ca6a45009c4d91b09e412dd554945f0458d929f0ab927a27a7c86",
+      "format": 3,
+      "size": [
+        120,
+        36
+      ],
+      "durationSeconds": 64.994,
+      "timing": "PTY wall-clock",
+      "generator": "KodexDocs/scripts/record-integrations.py",
+      "generatorSha256": "f82a108d41633a8937ae845c4e162299b782474d589c140d171d297e3443b091",
+      "inputCaptured": false,
+      "originalHomeMounted": false,
+      "modelCalled": false,
+      "cliSha256": "99882904ad4d20eb65e00dffd983b77aec4893ef3ca4bdfcdb8684a6f4800af3",
+      "asciinemaSha256": "bec9781bc8f297a9d3d74ff60205599507f2abba1183578b8b2f22be4c999214",
+      "networkIsolated": true,
+      "demoFixture": "Disposable Codex configuration and local MCP server; no personal credentials",
+      "fixtureSha256": "5b616c2283c1b8ca0d4e57ef7c81e0a0fc686bc7ca0e9cd8b2058cdca873830d",
+      "actionsSha256": "f0cccb82583b3ffcdbaca169b65590483318afde4f194fe5fcc1e24def9984a4",
+      "actions": "KodexDocs/scripts/fixtures/mcp-actions.json"
+    }
+  }
+}

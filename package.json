@@ -2,10 +2,23 @@
   "name": "kodex-docs",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
-    "build": "node scripts/build.mjs",
-    "preview": "node scripts/preview.mjs",
+    "dev": "vitepress dev docs --host 127.0.0.1 --port 4173 --strictPort",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs --host 127.0.0.1 --port 4173 --strictPort",
     "test": "node --test",
-    "check": "node scripts/build.mjs --check"
+    "check": "npm run build && npm test"
+  },
+  "devDependencies": {
+    "@vueuse/core": "12.8.2",
+    "asciinema-player": "3.17.0",
+    "vitepress": "1.6.4",
+    "vue": "3.5.42"
+  },
+  "overrides": {
+    "vite": "6.4.3"
   }
 }
