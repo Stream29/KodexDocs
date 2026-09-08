@@ -62,9 +62,11 @@ Generated output is ignored at `docs/.vitepress/dist/`; do not edit or commit it
   Unknown names are inert, including JavaScript prototype names.
 - Players have no generated caption or small-screen hint. Provenance stays in
   the manifest; original native footage and component fixtures remain distinguished there.
-- All recordings start automatically; the built-in pause and playback controls remain available.
-- `results-history` starts at 190.1 seconds, after the recorded preparation and
-  repeated redraw interval. This uses the player's `startAt`, not edited ANSI.
+- Recordings behave like animations: native autoplay/loop, no controls, and an
+  inert mount that prevents mouse, keyboard, focus, and selection interaction.
+- `results-history` collapses the first 190.1 seconds of preparation to timestamp
+  zero so every loop starts at the actual history. All terminal output is preserved;
+  the original recording and output hashes are retained in provenance.
 - `docs/public/recordings/` contains eight isolated native CLI recordings and four
   recordings exported from actual production Compose components.
 - Component recordings use offline fixtures and edited two-second checkpoints:
@@ -111,8 +113,11 @@ with `KODEX_DOCS_RECORDINGS_DIR` pointing to an absolute output directory.
 The opt-in exporters are `DocsRecordingTest.kt`, `DocsHistoryRecordingTest.kt`, and
 `DocsWorkspaceRecordingTest.kt`; ordinary test runs do not export files.
 Review the plain frames against browser playback before copying casts into
-`docs/public/recordings/`, then run `uv run python KodexDocs/scripts/recording-manifest.py`
-from BuildKodex. Keep the native `.provenance.json` files in `out/docs-native-current/`
+`docs/public/recordings/`. Collapse the reviewed results preparation interval with
+`uv run python KodexDocs/scripts/recording_timing.py out/docs-live-current/results-history.cast KodexDocs/docs/public/recordings/results-history.cast --before 190.1`.
+Then run `uv run python -B KodexDocs/scripts/recording-manifest.py --source-revision <recorded-Kodex-revision>`
+from BuildKodex; use the recorded build revision, not the latest documentation commit.
+Keep the native `.provenance.json` files in `out/docs-native-current/`
 for that command. Never replace recorded output with hand-written ANSI.
 The integrations recorder also retains settings snapshots and local MCP request/start
 logs under `out/docs-integrations/final/` for verification, not as public site assets.

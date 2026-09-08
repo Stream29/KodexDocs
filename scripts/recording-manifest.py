@@ -1,12 +1,17 @@
 """Generate provenance for the reviewed docs recordings, not arbitrary recordings."""
 import hashlib
+import argparse
 import json
 import subprocess
 from pathlib import Path
+from recording_timing import collapse_preparation
 
 root = Path(__file__).resolve().parents[2]
 assets = root / "KodexDocs/docs/public/recordings"
-source = subprocess.check_output(["git", "-C", str(root / "Kodex"), "rev-parse", "HEAD"], text=True).strip()
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument("--source-revision", required=True, help="Kodex revision used for the recorded CLI build")
+args = parser.parse_args()
+source = subprocess.check_output(["git", "-C", str(root / "Kodex"), "rev-parse", args.source_revision], text=True).strip()
 digest = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
 native_script = root / "KodexDocs/scripts/record-native.py"
 live_script = root / "KodexDocs/scripts/record-live.py"
@@ -54,7 +59,21 @@ for name in ("workspace", "input", "configuration", "execution", "questions", "s
     if native:
         directory = "docs-integrations/final" if integrations else "docs-live-current" if live else "docs-native-current"
         provenance = json.loads((root / f"out/{directory}/{name}.provenance.json").read_text())
-        assert provenance["castSha256"] == record["castSha256"]
+        if name == "results-history":
+            original = root / "out/docs-live-current/results-history.cast"
+            original_events = [json.loads(line) for line in original.read_text().splitlines()]
+            assert digest(original) == provenance["castSha256"]
+            assert events == collapse_preparation(original_events, 190.1)
+            record["sourceCastSha256"] = provenance["castSha256"]
+            record["sourceOutputSha256"] = hashlib.sha256(
+                "".join(event[2] for event in original_events[1:] if event[1] == "o").encode()
+            ).hexdigest()
+            record["preparationSecondsCollapsed"] = 190.1
+            record["timing"] = "editorial: preparation outputs at t=0; subsequent recorded intervals preserved"
+            record["timingEditor"] = "KodexDocs/scripts/recording_timing.py"
+            record["timingEditorSha256"] = digest(root / record["timingEditor"])
+        else:
+            assert provenance["castSha256"] == record["castSha256"]
         assert provenance["generatorSha256"] == record["generatorSha256"]
         record["cliSha256"] = provenance["cliSha256"]
         record["asciinemaSha256"] = provenance["asciinemaSha256"]

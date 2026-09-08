@@ -49,7 +49,6 @@ test('terminal markers preserve source and select only allowlisted recordings', 
   const document = rawDocument(source, md.parse(source, {}));
   assert.equal(document.chunks.map(chunk => chunk.text).join(''), source);
   assert.equal(recordingForText(source)?.src, '/recordings/workspace.cast');
-  assert.equal(recordingForText(source)?.poster, 'npt:2');
   assert.equal(recordingForText('<!-- kodex-player: unknown -->'), undefined);
   for (const name of ['constructor', 'toString', '__proto__', 'hasOwnProperty']) {
     assert.equal(recordingForText(`<!-- kodex-player: ${name} -->`), undefined);
@@ -78,6 +77,7 @@ for (const [lang, path] of [['en-US', ''], ['zh-CN', 'zh-CN/'], ['zh-TW', 'zh-TW
     assert.doesNotMatch(text, /KODEX_HOME|\/home\/stream\/|�/);
     assert.doesNotMatch(html, /terminal-player__note|playback only|On small screens|窄屏可|窄螢幕可/);
     assert.doesNotMatch(html, /github\.com\/Stream29\/KodexDocs\/edit\//);
+    assert.match(html, /class="terminal-player__mount" inert/);
     for (const chunk of rawDocument(source, md.parse(source, {})).chunks) {
       const recording = recordingForText(chunk.text);
       if (!recording) continue;
@@ -168,8 +168,17 @@ test('only UI showcase remains, with the same twelve demos in each language', as
   }
 });
 
-test('results playback starts after the recorded preparation interval', () => {
+test('results preparation is collapsed for every loop without changing terminal output', async () => {
   const recording = recordingForText('<!-- kodex-player: results-history -->');
-  assert.equal(recording.startAt, 190.1);
-  assert.equal(recording.poster, 'npt:63.067');
+  assert.equal(recording.startAt, undefined);
+  const manifest = JSON.parse(await readFile('docs/public/recordings/manifest.json', 'utf8'));
+  const provenance = manifest.recordings['results-history'];
+  const events = (await readFile('docs/public/recordings/results-history.cast', 'utf8')).trim().split('\n').map(JSON.parse);
+  assert.equal(provenance.preparationSecondsCollapsed, 190.1);
+  assert.match(provenance.sourceCastSha256, /^[a-f0-9]{64}$/);
+  assert.equal(events[1][0], 0);
+  assert.equal(createHash('sha256').update(events.slice(1).filter(event => event[1] === 'o')
+    .map(event => event[2]).join('')).digest('hex'), provenance.sourceOutputSha256);
+  assert.equal(createHash('sha256').update(await readFile('scripts/recording_timing.py'))
+    .digest('hex'), provenance.timingEditorSha256);
 });
