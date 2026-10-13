@@ -20,6 +20,10 @@
 
 <!-- kodex-player: session-tabs -->
 
+## 工作階段目錄管理
+
+<!-- kodex-player: session-management -->
+
 ## 執行控制
 
 <!-- kodex-player: execution -->
@@ -32,9 +36,17 @@
 
 <!-- kodex-player: suggestions -->
 
+## 建議工作階段接受結果
+
+<!-- kodex-player: suggestions-accepted -->
+
 ## 結果與歷史
 
 <!-- kodex-player: results-history -->
+
+## 歷史操作失效保護
+
+<!-- kodex-player: history-invalidation -->
 
 ## 設定
 

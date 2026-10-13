@@ -5,10 +5,13 @@ const recordings = {
   execution: { src: '/recordings/execution.cast', kind: 'cli', idleTimeLimit: 2, speed: 2 },
   questions: { src: '/recordings/questions.cast', kind: 'fixture' },
   suggestions: { src: '/recordings/suggestions.cast', kind: 'fixture' },
+  'suggestions-accepted': { src: '/recordings/suggestions-accepted.cast', kind: 'fixture' },
   'results-history': { src: '/recordings/results-history.cast', kind: 'cli', idleTimeLimit: 2 },
+  'history-invalidation': { src: '/recordings/history-invalidation.cast', kind: 'fixture' },
   'history-index': { src: '/recordings/history-index.cast', kind: 'cli', idleTimeLimit: 2 },
   'terminal-sessions': { src: '/recordings/terminal-sessions.cast', kind: 'fixture' },
   'session-tabs': { src: '/recordings/session-tabs.cast', kind: 'fixture' },
+  'session-management': { src: '/recordings/session-management.cast', kind: 'fixture' },
   hooks: { src: '/recordings/hooks.cast', kind: 'cli' },
   mcp: { src: '/recordings/mcp.cast', kind: 'cli' },
 };

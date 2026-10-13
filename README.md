@@ -15,7 +15,8 @@ The custom theme displays **literal Markdown**, not rendered rich text or a simu
 - Code fences, links, HTML and Vue expressions remain literal text. VitePress Markdown/Vue extensions are intentionally not rendered.
 - Only UI demonstrations and explicitly requested content belong on the site;
   installation, connections, and standalone reference pages have been removed.
-- Feature content follows source revision `89205188d5da`. Do not equate source features with a release.
+- The original twelve clips follow source revision `89205188d5da`; three
+  completion clips use `2b16ae50`. Neither source snapshot is a release claim.
 
 ## Local development
 
@@ -67,11 +68,15 @@ Generated output is ignored at `docs/.vitepress/dist/`; do not edit or commit it
 - `results-history` collapses the first 190.1 seconds of preparation to timestamp
   zero so every loop starts at the actual history. All terminal output is preserved;
   the original recording and output hashes are retained in provenance.
-- `docs/public/recordings/` contains eight isolated native CLI recordings and four
-  recordings exported from actual production Compose components.
-- Component recordings use offline fixtures and edited two-second checkpoints:
-  no live model call or real project/process operation is implied. The
-  manifest distinguishes them from native PTY clips.
+- `docs/public/recordings/` contains eight isolated native CLI recordings and seven
+  recordings exported from production Compose components.
+- Component clips use edited two-second checkpoints and no live model call.
+  The original four use offline component fixtures; the three completion clips
+  use a disposable filesystem Home and in-memory RPC with the full application
+  shell. `suggestions-accepted` receives a suggestion tool call from the mocked
+  model, then creates and automatically opens real disposable Session tabs;
+  a child tab is selected to show its result.
+  The manifest distinguishes all of them from native PTY clips.
 - `execution` is an actual authenticated model run, continuing an authorized English
   excerpt of a local feature discussion in a disposable Session/project. The original
   conversation is never opened by the demo CLI. Authentication is bound read-only;
@@ -79,15 +84,20 @@ Generated output is ignored at `docs/.vitepress/dist/`; do not edit or commit it
 - `history-index` shows the native CLI's mixed real history and hover transitions.
   `results-history` is one continuous native review of the same run, including actual
   command results, patch changes, questions, plans, compaction, Fork and Revert.
+- `session-management` shows rename, close, catalog reopen, archive/unarchive and
+  cancelled/confirmed deletion with persisted results. `history-invalidation`
+  shows a running turn dismissing the history menu and changing the selected
+  Session dismissing a stale Revert confirmation; the current UI does not retain
+  a disabled action in either case.
 - `hooks` records actual configuration validation, event selection, editing and deletion.
   `mcp` uses a disposable stdio server to exercise real connection failure/reconnect,
   enable/disable, editing, Codex import and deletion. HTTP/OAuth is an unsaved
   configuration draft, not a successful external authorization.
 - On narrow screens the fixed terminal grid scales down; use landscape/full screen.
   This is playback, not a live terminal.
-- `manifest.json` records format, source revision, generators, timing, and hashes.
-  The native binary was freshly built from that revision plus the recorded
-  testability-only dialog visibility change, not taken from an untraceable old probe.
+- `manifest.json` records format, source revisions, generators, timing, and hashes.
+  The original native binary was freshly built from its recorded revision plus
+  the recorded testability-only dialog visibility change.
 
 Regenerate from the BuildKodex workspace, using its documented Gradle JDK and
 recording isolation rules:
@@ -108,17 +118,25 @@ uv run python KodexDocs/scripts/record-integrations.py hooks \
 # Repeat with scene mcp and fixtures/mcp-actions.json.
 ```
 
-For the component clips, run `:app-view-application:jvmTest --rerun` in Kodex/
-with `KODEX_DOCS_RECORDINGS_DIR` pointing to an absolute output directory.
-The opt-in exporters are `DocsRecordingTest.kt`, `DocsHistoryRecordingTest.kt`, and
-`DocsWorkspaceRecordingTest.kt`; ordinary test runs do not export files.
+The earlier component clips were exported with the old
+`DocsRecordingTest.kt`, `DocsHistoryRecordingTest.kt`, and
+`DocsWorkspaceRecordingTest.kt` sources. For the three current-source
+completion clips, run `:app-impl-view:jvmTest` in Kodex/ with
+`KODEX_DOCS_RECORDINGS_DIR` pointing to an absolute output directory and
+`--tests` filters for `docsCompletionRecordingTest`,
+`docsSessionManagementRecordingTest`, and
+`docsHistoryInvalidationRecordingTest`. These tests use disposable Home
+directories and a mocked model client; ordinary test runs do not export files.
 Review the plain frames against browser playback before copying casts into
 `docs/public/recordings/`. Collapse the reviewed results preparation interval with
 `uv run python KodexDocs/scripts/recording_timing.py out/docs-live-current/results-history.cast KodexDocs/docs/public/recordings/results-history.cast --before 190.1`.
-Then run `uv run python -B KodexDocs/scripts/recording-manifest.py --source-revision <recorded-Kodex-revision>`
-from BuildKodex; use the recorded build revision, not the latest documentation commit.
-Keep the native `.provenance.json` files in `out/docs-native-current/`
-for that command. Never replace recorded output with hand-written ANSI.
+From BuildKodex, run
+`uv run python -B KodexDocs/scripts/update-completion-manifest.py --source-revision <tested-Kodex-revision>`
+after reviewing the three completion clips. It preserves older provenance.
+`recording-manifest.py` describes the earlier source layout and should not be
+rerun against the current checkout. Keep the earlier native
+`.provenance.json` files in `out/docs-native-current/`; never replace recorded
+output with hand-written ANSI.
 The integrations recorder also retains settings snapshots and local MCP request/start
 logs under `out/docs-integrations/final/` for verification, not as public site assets.
 

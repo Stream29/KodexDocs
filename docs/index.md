@@ -20,6 +20,10 @@
 
 <!-- kodex-player: session-tabs -->
 
+## Session management
+
+<!-- kodex-player: session-management -->
+
 ## Execution
 
 <!-- kodex-player: execution -->
@@ -32,9 +36,17 @@
 
 <!-- kodex-player: suggestions -->
 
+## Suggested Sessions acceptance
+
+<!-- kodex-player: suggestions-accepted -->
+
 ## Results & history
 
 <!-- kodex-player: results-history -->
+
+## History action safety
+
+<!-- kodex-player: history-invalidation -->
 
 ## Settings
 

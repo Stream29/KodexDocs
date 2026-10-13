@@ -20,6 +20,10 @@
 
 <!-- kodex-player: session-tabs -->
 
+## 会话目录管理
+
+<!-- kodex-player: session-management -->
+
 ## 执行控制
 
 <!-- kodex-player: execution -->
@@ -32,9 +36,17 @@
 
 <!-- kodex-player: suggestions -->
 
+## 建议会话接受结果
+
+<!-- kodex-player: suggestions-accepted -->
+
 ## 结果与历史
 
 <!-- kodex-player: results-history -->
+
+## 历史操作失效保护
+
+<!-- kodex-player: history-invalidation -->
 
 ## 设置
 

@@ -262,6 +262,68 @@
       "fixtureSha256": "5b616c2283c1b8ca0d4e57ef7c81e0a0fc686bc7ca0e9cd8b2058cdca873830d",
       "actionsSha256": "f0cccb82583b3ffcdbaca169b65590483318afde4f194fe5fcc1e24def9984a4",
       "actions": "KodexDocs/scripts/fixtures/mcp-actions.json"
+    },
+    "suggestions-accepted": {
+      "kind": "full-application-offline-fixture",
+      "sourceRevision": "2b16ae50c5e195908160dd13f1c366c70e1fe80e",
+      "castSha256": "17fe10b1ada44cd2be4f44e8705e29d4f2aaa26158e02cd476441783bb632d1b",
+      "format": 2,
+      "size": [
+        120,
+        36
+      ],
+      "durationSeconds": 14,
+      "timing": "editorial: two seconds per asserted frame",
+      "generator": "Kodex/app/impl/view/src/jvmTest/kotlin/io/github/stream29/kodex/cli/app/DocsCompletionRecordingTest.kt",
+      "generatorSha256": "3cd0e13040f0491909735d5b22913b68785e0e88763931194fbe26d76f498a6b",
+      "sharedExporterSha256": "d5d109690bb9a2c506cd45efebfde0cf73de573e8ce040a1dcf48aa568d38c61",
+      "inputCaptured": false,
+      "originalHomeMounted": false,
+      "modelCalled": false,
+      "modelClient": "offline mock",
+      "testBackend": "disposable filesystem Home and in-memory RPC; full application shell",
+      "pendingSuggestion": "mocked model tool call; production approval and automatic Session tab opening"
+    },
+    "session-management": {
+      "kind": "full-application-offline-fixture",
+      "sourceRevision": "2b16ae50c5e195908160dd13f1c366c70e1fe80e",
+      "castSha256": "b3170f7936a4a33aa68672e4c765f5ff8056b3dedae434186ea47a0739527a89",
+      "format": 2,
+      "size": [
+        120,
+        36
+      ],
+      "durationSeconds": 40,
+      "timing": "editorial: two seconds per asserted frame",
+      "generator": "Kodex/app/impl/view/src/jvmTest/kotlin/io/github/stream29/kodex/cli/app/DocsSessionManagementRecordingTest.kt",
+      "generatorSha256": "f11f6c7b6ebc38540755661579afa2033844e387450308fbd0c935b49c78db68",
+      "sharedExporterSha256": "d5d109690bb9a2c506cd45efebfde0cf73de573e8ce040a1dcf48aa568d38c61",
+      "inputCaptured": false,
+      "originalHomeMounted": false,
+      "modelCalled": false,
+      "modelClient": "offline mock",
+      "testBackend": "disposable filesystem Home and in-memory RPC; full application shell"
+    },
+    "history-invalidation": {
+      "kind": "full-application-offline-fixture",
+      "sourceRevision": "2b16ae50c5e195908160dd13f1c366c70e1fe80e",
+      "castSha256": "bef29ce971d668f4c143a416e8bd55ce64c7cfb0c7ddb2843fc4ae2865cc30dd",
+      "format": 2,
+      "size": [
+        120,
+        36
+      ],
+      "durationSeconds": 12,
+      "timing": "editorial: two seconds per asserted frame",
+      "generator": "Kodex/app/impl/view/src/jvmTest/kotlin/io/github/stream29/kodex/cli/app/DocsHistoryInvalidationRecordingTest.kt",
+      "generatorSha256": "12fe0a36b1479a2f262255dbe5d7d77ac68d57f22cefe2e0c08f6d88dca67166",
+      "sharedExporterSha256": "d5d109690bb9a2c506cd45efebfde0cf73de573e8ce040a1dcf48aa568d38c61",
+      "inputCaptured": false,
+      "originalHomeMounted": false,
+      "modelCalled": false,
+      "modelClient": "offline mock",
+      "testBackend": "disposable filesystem Home and in-memory RPC; full application shell",
+      "invalidation": "running dismisses menu; selecting another tab dismisses stale confirmation"
     }
   }
 }
